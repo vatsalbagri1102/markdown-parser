@@ -1,3 +1,3 @@
-[link1]("{}")
-[link2](stringtester)
+[link1]("[{}]")
+[link2](stringwithnoperiod)
 [youtube](https://www.youtube.com)
