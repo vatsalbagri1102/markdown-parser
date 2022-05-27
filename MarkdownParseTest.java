@@ -8,6 +8,7 @@ import org.junit.*;
 
 public class MarkdownParseTest {
 
+    /*
     @Test
     public void addition() {
         assertEquals(2, 1+1);
@@ -27,6 +28,35 @@ public class MarkdownParseTest {
         Path file = Path.of("test-file1.md");
         String fileContent = Files.readString(file);
         List<String> expected = List.of("{}", "stringtester", "https://www.youtube.com");
+        
+        assertEquals(expected, fileContent);
+    }
+    */
+
+    @Test
+    public void test1() throws IOException{
+        Path file = Path.of("snippet1.md");
+        String fileContent = Files.readString(file);
+        List<String> expected = List.of("another link`", "cod[e", "code]");
+        
+        assertEquals(expected, fileContent);
+    }
+
+    @Test
+    public void test2() throws IOException{
+
+        Path file = Path.of("snippet2.md");
+        String fileContent = Files.readString(file);
+        List<String> expected = List.of("a nested parenthesizde url", "some escaped [ brackets ]");
+        
+        assertEquals(expected, fileContent);
+    }
+
+    @Test
+    public void test3() throws IOException{
+        Path file = Path.of("snippet3.md");
+        String fileContent = Files.readString(file);
+        List<String> expected = List.of("this title is really long and takes up more than one line");
         
         assertEquals(expected, fileContent);
     }
