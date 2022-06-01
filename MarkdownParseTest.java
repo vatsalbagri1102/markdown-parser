@@ -37,7 +37,7 @@ public class MarkdownParseTest {
     public void test1() throws IOException{
         Path file = Path.of("snippet1.md");
         String fileContent = Files.readString(file);
-        List<String> expected = List.of("another link`", "cod[e", "code]");
+        List<String> expected = List.of("google.com", "google.com", "ucsd.edu");
         
         assertEquals(expected, fileContent);
     }
@@ -47,7 +47,7 @@ public class MarkdownParseTest {
 
         Path file = Path.of("snippet2.md");
         String fileContent = Files.readString(file);
-        List<String> expected = List.of("a nested parenthesizde url", "some escaped [ brackets ]");
+        List<String> expected = List.of("a.com(())", "example.com");
         
         assertEquals(expected, fileContent);
     }
@@ -56,7 +56,7 @@ public class MarkdownParseTest {
     public void test3() throws IOException{
         Path file = Path.of("snippet3.md");
         String fileContent = Files.readString(file);
-        List<String> expected = List.of("this title is really long and takes up more than one line");
+        List<String> expected = List.of("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
         
         assertEquals(expected, fileContent);
     }
